@@ -1,0 +1,25 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { DealData } from "@/components/components/Table/DealData";
+import { config } from "@/config/config";
+import { fetchWorkflowService } from "@/lib/fetchWorkflowService";
+import { queryKeys } from "@/server-cache/queryKeys";
+
+export function useUpdateDeal() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: Record<string, unknown>;
+    }) => {
+      return (await fetchWorkflowService(config.updateDealUrl, {
+        body: { id, ...data },
+      })) as DealData;
+    },
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: queryKeys.deals });
+    },
+  });
+}
