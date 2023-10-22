@@ -1,7 +1,9 @@
 import * as React from "react";
 import {ReactNode, useState} from "react";
 import {Edit2, Loader2} from "lucide-react";
+import {getDealKeys} from "@/components/components/Table/CreateDealSheet";
 import {DealData} from "@/components/components/Table/DealData";
+import {isDisabledKey} from "@/components/components/Table/EditDealForm";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
@@ -16,8 +18,6 @@ import {
 } from "@/components/ui/sheet";
 import {toast} from "@/components/ui/use-toast";
 import {useUpdateDeal} from "@/server-cache/useUpdateDeal";
-import {getDealKeys} from "@/components/components/Table/CreateDealSheet";
-import {isDisabledKey} from "@/components/components/Table/EditDealForm";
 
 export function EditDealSheet(props: {
   asChild: boolean;

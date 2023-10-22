@@ -1,5 +1,5 @@
 export interface Deal {
   id: string;
-  organizationId: string
-  userId: string
+  organizationId: string;
+  userId: string;
 }

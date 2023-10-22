@@ -4,5 +4,5 @@ export interface Comment {
   timestamp: string;
   text: string;
   dealId: string;
-  organizationId: string
+    organizationId: string;
 }

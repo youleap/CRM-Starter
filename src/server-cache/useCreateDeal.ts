@@ -12,8 +12,8 @@ export function useCreateDeal() {
         body: data,
       })) as DealData;
     },
-      onSuccess: async (_, variables) => {
-          const {organizationId} = variables;
+    onSuccess: async (_, variables) => {
+      const {organizationId} = variables;
       await queryClient.invalidateQueries({
         queryKey: queryKeys.deals({ organizationId }),
       });

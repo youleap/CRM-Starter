@@ -19,7 +19,7 @@ export function DeleteDealDialog(props: {
   dealId: string;
   asChild?: boolean;
   trigger: ReactNode;
-  organizationId: string
+  organizationId: string;
   onDeleteSuccess?: () => void;
 }) {
   const { toast } = useToast();
@@ -31,19 +31,22 @@ export function DeleteDealDialog(props: {
   const deleteDealMutation = useDeleteDeal();
 
   function handleDeleteDeal() {
-    deleteDealMutation.mutate({dealId, organizationId}, {
-      onSuccess: () => {
-        setIsOpen(false);
-        onDeleteSuccess?.();
-      },
-      onError: () => {
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-        });
-      },
-    });
+    deleteDealMutation.mutate(
+        {dealId, organizationId},
+        {
+          onSuccess: () => {
+            setIsOpen(false);
+            onDeleteSuccess?.();
+          },
+          onError: () => {
+            toast({
+              variant: "destructive",
+              title: "Uh oh! Something went wrong.",
+              description: "There was a problem with your request.",
+            });
+          },
+        }
+    );
   }
 
   return (

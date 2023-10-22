@@ -265,10 +265,7 @@ export function DealTable(props: {
             setGlobalFilter(event.target.value);
           }}
         />
-        <CreateDealSheet
-          asChild
-          trigger={<Button>Create Row</Button>}
-        />
+        <CreateDealSheet asChild trigger={<Button>Create Row</Button>}/>
         <TableColumnSelection table={table} />
       </div>
       <div className="rounded-md border">

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="">
+    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="wip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(crm)/deals/[dealId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(crm)/deals/[dealId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/DealModalContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/DealModalContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/components/Table/DealData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/DealData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/components/Table/DealTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/DealTable.tsx" afterDir="false" />
@@ -13,9 +16,12 @@
       <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server-cache/useCreateDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useCreateDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useDealComments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDealComments.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server-cache/useDeals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDeals.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server-cache/useDeleteDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDeleteDeal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server-cache/useUpdateDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useUpdateDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Deal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Deal.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +61,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/prettier",
-    "settings.editor.selected.configurable": "com.codeium.AppSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -65,6 +71,7 @@
       <map>
         <entry key="com.haulmont.rcb.reactComponents" value="false" />
         <entry key="com.haulmont.rcb.reactInspector" value="false" />
+        <entry key="com.haulmont.rcb.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -104,6 +111,7 @@
       <workItem from="1697923584729" duration="505000" />
       <workItem from="1697924110626" duration="357000" />
       <workItem from="1697924481167" duration="26883000" />
+      <workItem from="1698000075611" duration="637000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <option name="closed" value="true" />
@@ -393,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697989850033</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="orgId">
+      <option name="closed" value="true" />
+      <created>1698000358664</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1698000358664</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,5 +446,7 @@
     <MESSAGE value="init demo app" />
     <MESSAGE value="orgId" />
     <option name="LAST_COMMIT_MESSAGE" value="orgId" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
