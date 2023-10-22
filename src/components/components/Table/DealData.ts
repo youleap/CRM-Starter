@@ -1,1 +1,9 @@
-export type DealData = Record<string, unknown> & { id: string; userId: string, organizationId: string };
+export interface DealData {
+    id: string;
+    userId: string;
+    organizationId: string;
+    name: string;
+    price: string;
+    discount: string;
+    description: string;
+}

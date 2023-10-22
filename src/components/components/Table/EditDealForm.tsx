@@ -1,14 +1,19 @@
 "use client";
 
-import { pathFor } from "@nirtamir2/next-static-paths";
-import { Edit2, Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { toast } from "@/components/ui/use-toast";
-import { useDeal } from "@/server-cache/useDeal";
-import { useUpdateDeal } from "@/server-cache/useUpdateDeal";
+import {pathFor} from "@nirtamir2/next-static-paths";
+import {Edit2, Loader2} from "lucide-react";
+import {useRouter} from "next/navigation";
+import {getDealKeys} from "@/components/components/Table/CreateDealSheet";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {Label} from "@/components/ui/label";
+import {toast} from "@/components/ui/use-toast";
+import {useDeal} from "@/server-cache/useDeal";
+import {useUpdateDeal} from "@/server-cache/useUpdateDeal";
+
+export function isDisabledKey(key: string) {
+    return key === "id" || key === "userId" || key === "organizationId";
+}
 
 export function EditDeal(props: { dealId: string; organizationId: string }) {
   const { dealId, organizationId } = props;
@@ -52,7 +57,7 @@ export function EditDeal(props: { dealId: string; organizationId: string }) {
       onSubmit={(event) => {
         event.preventDefault();
         const updatedRow = Object.fromEntries(
-          Object.keys(dealQuery.data).map((key) => {
+            getDealKeys().map((key) => {
             const formField = event.currentTarget[key] as
               | HTMLInputElement
               | undefined;
@@ -77,7 +82,7 @@ export function EditDeal(props: { dealId: string; organizationId: string }) {
               <Input
                 id={key}
                 name={key}
-                disabled={key === "id" || key === "userId"}
+                disabled={isDisabledKey(key)}
                 defaultValue={String(value)}
                 className="col-span-3"
               />

@@ -1,30 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
-  RowData,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  RowData,
+  SortingState,
   useReactTable,
+  VisibilityState,
 } from "@tanstack/react-table";
-import { uniq } from "lodash";
-import { MoreHorizontal } from "lucide-react";
-import { CreateDealSheet } from "@/components/components/Table/CreateDealSheet";
-import { DealData } from "@/components/components/Table/DealData";
-import { DeleteDealDialog } from "@/components/components/Table/DeleteDealDialog";
-import { EditDealSheet } from "@/components/components/Table/EditDealSheet";
-import { SortableTableHeaderCell } from "@/components/components/Table/SortableTableHeaderCell";
-import { TableColumnSelection } from "@/components/components/Table/TableColumnSelection";
-import { TableFooter } from "@/components/components/Table/TableFooter";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+import {uniq} from "lodash";
+import {MoreHorizontal} from "lucide-react";
+import {CreateDealSheet} from "@/components/components/Table/CreateDealSheet";
+import {DealData} from "@/components/components/Table/DealData";
+import {DeleteDealDialog} from "@/components/components/Table/DeleteDealDialog";
+import {EditDealSheet} from "@/components/components/Table/EditDealSheet";
+import {SortableTableHeaderCell} from "@/components/components/Table/SortableTableHeaderCell";
+import {TableColumnSelection} from "@/components/components/Table/TableColumnSelection";
+import {TableFooter} from "@/components/components/Table/TableFooter";
+import {Button} from "@/components/ui/button";
+import {Checkbox} from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,16 +32,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import {
-  Table as BaseTable,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { cn } from "@/lib/utils";
+import {Input} from "@/components/ui/input";
+import {Table as BaseTable, TableBody, TableCell, TableHead, TableHeader, TableRow,} from "@/components/ui/table";
+import {cn} from "@/lib/utils";
 
 declare module "@tanstack/react-table" {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -261,9 +254,6 @@ export function DealTable(props: {
     ));
   }
 
-  // eslint-disable-next-line prefer-destructuring
-  const firstRow: DealData | null = data[0];
-
   return (
     <div className="w-full">
       <div className="flex items-center gap-4 py-4">
@@ -277,7 +267,6 @@ export function DealTable(props: {
         />
         <CreateDealSheet
           asChild
-          deal={firstRow}
           trigger={<Button>Create Row</Button>}
         />
         <TableColumnSelection table={table} />

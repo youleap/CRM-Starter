@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { useAuth } from "@clerk/nextjs";
-import { DealModalContent } from "@/components/components/DealModalContent";
+"use client"
+import {useAuth} from "@clerk/nextjs";
+import {DealModalContent} from "@/components/components/DealModalContent";
 
 interface Props {
   params: {
