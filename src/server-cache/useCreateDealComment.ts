@@ -14,9 +14,9 @@ export function useCreateDealComment() {
       })) as DealData;
     },
     onSuccess: async (_, variables) => {
-      const { dealId } = variables;
+      const { dealId, organizationId } = variables;
       await queryClient.invalidateQueries({
-        queryKey: queryKeys.dealComments(dealId),
+        queryKey: queryKeys.dealComments({ organizationId, dealId }),
       });
     },
   });

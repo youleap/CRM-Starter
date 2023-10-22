@@ -33,6 +33,7 @@ export function EditDealSheet(props: {
       {
         id: row.id,
         data: updatedRow,
+        organizationId: row.organizationId,
       },
       {
         onSuccess: () => {

@@ -10,9 +10,10 @@ import { toast } from "@/components/ui/use-toast";
 import { useDeal } from "@/server-cache/useDeal";
 import { useUpdateDeal } from "@/server-cache/useUpdateDeal";
 
-export function EditDeal(props: { dealId: string }) {
-  const { dealId } = props;
-  const dealQuery = useDeal(dealId);
+export function EditDeal(props: { dealId: string; organizationId: string }) {
+  const { dealId, organizationId } = props;
+
+  const dealQuery = useDeal({ id: dealId, organizationId });
   const router = useRouter();
 
   const updateDealMutation = useUpdateDeal();
@@ -22,6 +23,7 @@ export function EditDeal(props: { dealId: string }) {
       {
         id: dealId,
         data: updatedRow,
+        organizationId,
       },
       {
         onSuccess: () => {

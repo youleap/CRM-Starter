@@ -28,7 +28,7 @@ export function CreateDealSheet(props: {
 
   const createRowMutation = useCreateDeal();
 
-  function handleCreateRow(data: Record<string, unknown>) {
+  function handleCreateRow(data: Omit<DealData, "id">) {
     createRowMutation.mutate(data, {
       onSuccess: () => {
         setIsOpen(false);

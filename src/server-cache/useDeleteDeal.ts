@@ -4,7 +4,7 @@ import { config } from "@/config/config";
 import { fetchWorkflowService } from "@/lib/fetchWorkflowService";
 import { queryKeys } from "@/server-cache/queryKeys";
 
-export function useDeleteDeal() {
+export function useDeleteDeal({organizationId}: {organizationId: string}) {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (rowId: string) => {
@@ -13,7 +13,7 @@ export function useDeleteDeal() {
       })) as DealData;
     },
     onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.deals });
+      await queryClient.invalidateQueries({ queryKey: queryKeys.deals({organizationId}) });
     },
   });
 }

@@ -19,15 +19,16 @@ export function DeleteDealDialog(props: {
   dealId: string;
   asChild?: boolean;
   trigger: ReactNode;
+  organizationId: string
   onDeleteSuccess?: () => void;
 }) {
   const { toast } = useToast();
 
-  const { trigger, asChild, dealId, onDeleteSuccess } = props;
+  const { trigger, asChild, dealId, organizationId, onDeleteSuccess } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const deleteDealMutation = useDeleteDeal();
+  const deleteDealMutation = useDeleteDeal({organizationId});
 
   function handleDeleteDeal() {
     deleteDealMutation.mutate(dealId, {

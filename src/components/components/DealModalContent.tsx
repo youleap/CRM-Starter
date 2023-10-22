@@ -4,59 +4,26 @@ import { useAuth } from "@clerk/nextjs";
 import { pathFor } from "@nirtamir2/next-static-paths";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Comment } from "@/components/components/Comment";
+import { CommentList } from "@/components/components/CommentList";
 import { DeleteDealDialog } from "@/components/components/Table/DeleteDealDialog";
 import { EditDeal } from "@/components/components/Table/EditDealForm";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCreateDealComment } from "@/server-cache/useCreateDealComment";
-import { useComments } from "@/server-cache/useDealComments";
 
 interface Props {
   dealId: string;
-}
-
-function CommentList(props: { dealId: string }) {
-  const { dealId } = props;
-
-  const commentsQuery = useComments(dealId);
-  if (commentsQuery.isPending) {
-    return "Loading";
-  }
-  if (commentsQuery.isError) {
-    return commentsQuery.error.message;
-  }
-
-  if (commentsQuery.data.length === 0) {
-    return <div>Add your first comment</div>;
-  }
-
-  return commentsQuery.data.map((comment) => {
-    return (
-      <Comment
-        key={comment.id}
-        avatar={comment.user?.imageUrl ?? "Unknown"}
-        text={comment.text}
-        date={comment.timestamp}
-        username={
-          comment.user == null
-            ? "Unknown"
-            : comment.user.username ??
-              `${comment.user.firstName} ${comment.user.lastName}`
-        }
-      />
-    );
-  });
+    organizationId: string;
 }
 
 export function DealModalContent(props: Props) {
-  const { dealId } = props;
+  const { dealId, organizationId } = props;
   const createDealCommentMutation = useCreateDealComment();
   const router = useRouter();
-  const { userId } = useAuth();
+  const { userId, orgId } = useAuth();
 
-  if (userId == null) {
+  if (userId == null || orgId == null) {
     return null;
   }
 
@@ -68,6 +35,7 @@ export function DealModalContent(props: Props) {
           <DeleteDealDialog
             trigger={<Trash height={24} width={24} />}
             dealId={dealId}
+            organizationId={organizationId}
             onDeleteSuccess={() => {
               router.push(pathFor("/deals"));
             }}
@@ -76,12 +44,12 @@ export function DealModalContent(props: Props) {
       </header>
       <main className="flex flex-col gap-6 p-6 lg:flex-row">
         <div className="w-full space-y-4 lg:w-1/2">
-          <EditDeal dealId={dealId} />
+          <EditDeal dealId={dealId} organizationId={orgId} />
         </div>
         <div className="w-full overflow-auto rounded-lg border border-zinc-200 dark:border-zinc-700 lg:w-1/2">
           <h2 className="border-b px-6 py-4 dark:border-zinc-700">Comments</h2>
           <div className="space-y-4 p-6">
-            <CommentList dealId={dealId} />
+            <CommentList dealId={dealId} organizationId={orgId} />
             <form
               className="mt-4 flex flex-col-reverse space-y-2 border-t border-zinc-200 pt-4 dark:border-zinc-700"
               onSubmit={(event) => {
@@ -95,6 +63,7 @@ export function DealModalContent(props: Props) {
                 event.currentTarget.reset();
                 const text = formField.value;
                 createDealCommentMutation.mutate({
+                  organizationId: orgId,
                   dealId,
                   userId,
                   text,

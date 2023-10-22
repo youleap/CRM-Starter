@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/components/CommentList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/Deal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(crm)/deals/[dealId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(crm)/deals/[dealId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(crm)/deals/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(crm)/deals/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/DealModalContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/DealModalContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/DealData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/DealData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/DealTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/DealTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/DeleteDealDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/DeleteDealDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/queryKeys.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/queryKeys.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useCreateDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useCreateDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useCreateDealComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useCreateDealComment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useDealComments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDealComments.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useDeals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDeals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useDeleteDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useDeleteDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server-cache/useUpdateDeal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server-cache/useUpdateDeal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Comment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "crm-example",
-    "last_opened_file_path": "/Users/nirtamir/dev/youleap/CRM-Starter/src/app/(crm)/@modal/(.)deals/[dealId]",
+    "last_opened_file_path": "/Users/nirtamir/dev/youleap/CRM-Starter/src/server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,13 +82,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/server" />
       <recent name="$PROJECT_DIR$/src/app/(crm)/@modal/(.)deals/[dealId]" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/server-cache" />
       <recent name="$PROJECT_DIR$/src/components/components/Table" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/components/components/CommentList.tsx" />
       <recent name="$PROJECT_DIR$/src/server-cache/Comment.ts" />
       <recent name="$PROJECT_DIR$/src/components/components/Comment.tsx" />
       <recent name="$PROJECT_DIR$/src/server-cache/queryKeys.ts" />
@@ -92,7 +115,7 @@
       <workItem from="1697643502927" duration="24186000" />
       <workItem from="1697923584729" duration="505000" />
       <workItem from="1697924110626" duration="357000" />
-      <workItem from="1697924481167" duration="18953000" />
+      <workItem from="1697924481167" duration="22779000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <option name="closed" value="true" />
@@ -334,7 +357,47 @@
       <option name="project" value="LOCAL" />
       <updated>1697982631671</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="env">
+      <option name="closed" value="true" />
+      <created>1697982837343</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1697982837343</updated>
+    </task>
+    <task id="LOCAL-00032" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1697982938304</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1697982938304</updated>
+    </task>
+    <task id="LOCAL-00033" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1697982996319</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1697982996319</updated>
+    </task>
+    <task id="LOCAL-00034" summary="README.md">
+      <option name="closed" value="true" />
+      <created>1697983059519</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1697983059519</updated>
+    </task>
+    <task id="LOCAL-00035" summary="init demo app">
+      <option name="closed" value="true" />
+      <created>1697985198826</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1697985198826</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,9 +426,12 @@
     <MESSAGE value="clerk users" />
     <MESSAGE value="move" />
     <MESSAGE value="better image" />
-    <MESSAGE value="env" />
     <MESSAGE value="clickable cell" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="env" />
+    <MESSAGE value="README.md" />
+    <MESSAGE value="works" />
+    <MESSAGE value="init demo app" />
+    <option name="LAST_COMMIT_MESSAGE" value="init demo app" />
   </component>
 </project>

@@ -124,6 +124,7 @@ export function DealTable(props: {
             <DeleteDealDialog
               asChild
               dealId={row.original.id}
+              organizationId={row.original.organizationId}
               trigger={
                 <DropdownMenuItem
                   className="flex cursor-pointer items-center text-destructive focus:text-destructive"

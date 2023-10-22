@@ -3,16 +3,10 @@ import { AppLayout } from "@/components/components/Layout";
 
 interface Props {
   children: ReactNode;
-  modal?: ReactNode;
 }
 
 export default function Layout(props: Props) {
-  const { children, modal } = props;
+  const { children } = props;
 
-  return (
-    <AppLayout>
-      {children}
-      {modal}
-    </AppLayout>
-  );
+  return <AppLayout>{children}</AppLayout>;
 }
