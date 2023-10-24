@@ -12,9 +12,9 @@ interface Props {
 export default function DealPage(props: Props) {
   const { params } = props;
   const { dealId } = params;
-    const {orgId} = useAuth();
+  const {orgId} = useAuth();
 
-    if (orgId == null) {
+  if (orgId == null) {
     return null;
   }
 
