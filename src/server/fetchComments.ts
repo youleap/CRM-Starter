@@ -2,6 +2,7 @@
 
 import { Clerk } from "@clerk/backend";
 import { uniq } from "lodash";
+import "server-only";
 import { config } from "@/config/config";
 import { fetchWorkflowService } from "@/lib/fetchWorkflowService";
 import { Comment } from "@/server/Comment";
