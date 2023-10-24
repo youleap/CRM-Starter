@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCreateDealComment } from "@/server-cache/useCreateDealComment";
 
-
 interface Props {
   dealId: string;
   organizationId: string;

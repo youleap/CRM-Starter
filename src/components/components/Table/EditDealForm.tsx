@@ -12,7 +12,6 @@ import { toast } from "@/components/ui/use-toast";
 import { useDeal } from "@/server-cache/useDeal";
 import { useUpdateDeal } from "@/server-cache/useUpdateDeal";
 
-
 export function isDisabledKey(key: string) {
   return key === "id" || key === "userId" || key === "organizationId";
 }
