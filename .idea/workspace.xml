@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="" />
+    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/CreateDealSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components/Table/EditDealSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -417,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698131181475</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="format">
+      <option name="closed" value="true" />
+      <created>1698131218581</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1698131218581</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

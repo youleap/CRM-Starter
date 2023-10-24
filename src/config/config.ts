@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 export const config = {
   fetchDealsUrl: process.env.NEXT_PUBLIC_FETCH_DEALS_URL!,
   fetchDealUrl: process.env.NEXT_PUBLIC_FETCH_DEAL_URL!,
@@ -12,3 +14,5 @@ export const config = {
     app: "https://youleap.io",
   },
 };
+
+/* eslint-enable @typescript-eslint/no-non-null-assertion */

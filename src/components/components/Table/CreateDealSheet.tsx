@@ -74,7 +74,7 @@ export function CreateDealSheet(props: {
                 }
                 return [key, formField.value];
               })
-            );
+            ) as Omit<DealData, "id">;
             if (userId != null && orgId != null) {
               handleCreateRow({ ...newRow, userId, organizationId: orgId });
             }

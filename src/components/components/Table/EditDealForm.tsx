@@ -4,6 +4,7 @@ import { pathFor } from "@nirtamir2/next-static-paths";
 import { Edit2, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { getDealKeys } from "@/components/components/Table/CreateDealSheet";
+import { DealData } from "@/components/components/Table/DealData";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,7 +25,7 @@ export function EditDeal(props: { dealId: string; organizationId: string }) {
 
   const updateDealMutation = useUpdateDeal();
 
-  function handleUpdateDeal(updatedRow: Record<string, unknown>) {
+  function handleUpdateDeal(updatedRow: DealData) {
     updateDealMutation.mutate(
       {
         id: dealId,
@@ -67,7 +68,7 @@ export function EditDeal(props: { dealId: string; organizationId: string }) {
             }
             return [key, formField.value];
           })
-        );
+        ) as unknown as DealData;
 
         // TODO: better to patch only the data that changed
         handleUpdateDeal(updatedRow);

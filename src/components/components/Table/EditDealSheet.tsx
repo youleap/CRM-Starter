@@ -69,7 +69,7 @@ export function EditDealSheet(props: {
                 }
                 return [key, formField.value];
               })
-            );
+            ) as unknown as DealData;
 
             // TODO: better to patch only the data that changed
             handleUpdateRow(updatedRow);
