@@ -1,10 +1,11 @@
-import {useQuery} from "@tanstack/react-query";
-import {DealData} from "@/components/components/Table/DealData";
-import {config} from "@/config/config";
-import {fetchWorkflowService} from "@/lib/fetchWorkflowService";
-import {queryKeys} from "@/server-cache/queryKeys";
+import { useQuery } from "@tanstack/react-query";
+import { DealData } from "@/components/components/Table/DealData";
+import { config } from "@/config/config";
+import { fetchWorkflowService } from "@/lib/fetchWorkflowService";
+import { queryKeys } from "@/server-cache/queryKeys";
 
-export function useDeals({organizationId}: { organizationId: string }) {
+
+export function useDeals({ organizationId }: { organizationId: string }) {
   return useQuery({
     queryFn: async () => {
       return (await fetchWorkflowService(config.fetchDealsUrl, {
@@ -13,6 +14,6 @@ export function useDeals({organizationId}: { organizationId: string }) {
         },
       })) as Array<DealData>;
     },
-    queryKey: queryKeys.deals({organizationId}),
+    queryKey: queryKeys.deals({ organizationId }),
   });
 }

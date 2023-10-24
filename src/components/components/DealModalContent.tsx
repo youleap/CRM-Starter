@@ -1,20 +1,21 @@
 "use client";
 
-import {useAuth} from "@clerk/nextjs";
-import {pathFor} from "@nirtamir2/next-static-paths";
-import {Trash} from "lucide-react";
-import {useRouter} from "next/navigation";
-import {CommentList} from "@/components/components/CommentList";
-import {DeleteDealDialog} from "@/components/components/Table/DeleteDealDialog";
-import {EditDeal} from "@/components/components/Table/EditDealForm";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Label} from "@/components/ui/label";
-import {useCreateDealComment} from "@/server-cache/useCreateDealComment";
+import { useAuth } from "@clerk/nextjs";
+import { pathFor } from "@nirtamir2/next-static-paths";
+import { Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { CommentList } from "@/components/components/CommentList";
+import { DeleteDealDialog } from "@/components/components/Table/DeleteDealDialog";
+import { EditDeal } from "@/components/components/Table/EditDealForm";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useCreateDealComment } from "@/server-cache/useCreateDealComment";
+
 
 interface Props {
   dealId: string;
-    organizationId: string;
+  organizationId: string;
 }
 
 export function DealModalContent(props: Props) {

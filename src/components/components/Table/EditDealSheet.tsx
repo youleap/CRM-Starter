@@ -1,23 +1,23 @@
 import * as React from "react";
-import {ReactNode, useState} from "react";
-import {Edit2, Loader2} from "lucide-react";
-import {getDealKeys} from "@/components/components/Table/CreateDealSheet";
-import {DealData} from "@/components/components/Table/DealData";
-import {isDisabledKey} from "@/components/components/Table/EditDealForm";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Label} from "@/components/ui/label";
+import { ReactNode, useState } from "react";
+import { Edit2, Loader2 } from "lucide-react";
+import { getDealKeys } from "@/components/components/Table/CreateDealSheet";
+import { DealData } from "@/components/components/Table/DealData";
+import { isDisabledKey } from "@/components/components/Table/EditDealForm";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet";
-import {toast} from "@/components/ui/use-toast";
-import {useUpdateDeal} from "@/server-cache/useUpdateDeal";
+import { toast } from "@/components/ui/use-toast";
+import { useUpdateDeal } from "@/server-cache/useUpdateDeal";
 
 export function EditDealSheet(props: {
   asChild: boolean;
@@ -30,7 +30,7 @@ export function EditDealSheet(props: {
 
   const updateRowMutation = useUpdateDeal();
 
-    function handleUpdateRow(updatedRow: DealData) {
+  function handleUpdateRow(updatedRow: DealData) {
     updateRowMutation.mutate(
       {
         id: row.id,
@@ -60,7 +60,7 @@ export function EditDealSheet(props: {
           onSubmit={(event) => {
             event.preventDefault();
             const updatedRow = Object.fromEntries(
-                getDealKeys().map((key) => {
+              getDealKeys().map((key) => {
                 const formField = event.currentTarget[key] as
                   | HTMLInputElement
                   | undefined;

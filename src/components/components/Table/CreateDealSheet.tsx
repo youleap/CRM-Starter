@@ -1,11 +1,11 @@
 import * as React from "react";
-import {ReactNode, useState} from "react";
-import {useAuth} from "@clerk/nextjs";
-import {Loader2, Save} from "lucide-react";
-import {DealData} from "@/components/components/Table/DealData";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {Label} from "@/components/ui/label";
+import { ReactNode, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { Loader2, Save } from "lucide-react";
+import { DealData } from "@/components/components/Table/DealData";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetContent,
@@ -15,8 +15,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {toast} from "@/components/ui/use-toast";
-import {useCreateDeal} from "@/server-cache/useCreateDeal";
+import { toast } from "@/components/ui/use-toast";
+import { useCreateDeal } from "@/server-cache/useCreateDeal";
 
 export function getDealKeys() {
   return [
@@ -34,13 +34,13 @@ export function CreateDealSheet(props: {
   asChild: boolean;
   trigger: ReactNode;
 }) {
-  const {trigger, asChild} = props;
+  const { trigger, asChild } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
   const createRowMutation = useCreateDeal();
 
-  const {userId, orgId} = useAuth();
+  const { userId, orgId } = useAuth();
 
   function handleCreateRow(data: Omit<DealData, "id">) {
     createRowMutation.mutate(data, {
@@ -65,7 +65,7 @@ export function CreateDealSheet(props: {
           onSubmit={(event) => {
             event.preventDefault();
             const newRow = Object.fromEntries(
-                getDealKeys().map((key) => {
+              getDealKeys().map((key) => {
                 const formField = event.currentTarget[key] as
                   | HTMLInputElement
                   | undefined;
@@ -76,7 +76,7 @@ export function CreateDealSheet(props: {
               })
             );
             if (userId != null && orgId != null) {
-              handleCreateRow({...newRow, userId, organizationId: orgId});
+              handleCreateRow({ ...newRow, userId, organizationId: orgId });
             }
           }}
         >
@@ -88,10 +88,10 @@ export function CreateDealSheet(props: {
           </SheetHeader>
           <div className="grid gap-4 py-4">
             {getDealKeys()
-                .filter(
-                    (key) =>
-                        key !== "id" && key !== "userId" && key !== "organizationId"
-                )
+              .filter(
+                (key) =>
+                  key !== "id" && key !== "userId" && key !== "organizationId"
+              )
               .map((key) => {
                 return (
                   <div

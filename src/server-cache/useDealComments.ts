@@ -1,11 +1,12 @@
-import {useQuery} from "@tanstack/react-query";
-import {queryKeys} from "@/server-cache/queryKeys";
-import {fetchComments} from "@/server/fetchComments";
+import { useQuery } from "@tanstack/react-query";
+import { queryKeys } from "@/server-cache/queryKeys";
+import { fetchComments } from "@/server/fetchComments";
+
 
 export function useComments({
-                                dealId,
-                                organizationId,
-                            }: {
+  dealId,
+  organizationId,
+}: {
   dealId: string;
   organizationId: string;
 }) {
@@ -13,6 +14,6 @@ export function useComments({
     queryFn: async () => {
       return await fetchComments(dealId);
     },
-      queryKey: queryKeys.dealComments({dealId, organizationId}),
+    queryKey: queryKeys.dealComments({ dealId, organizationId }),
   });
 }

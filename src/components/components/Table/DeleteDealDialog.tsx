@@ -1,6 +1,6 @@
 import * as React from "react";
-import {ReactNode, useState} from "react";
-import {Loader2, Trash} from "lucide-react";
+import { ReactNode, useState } from "react";
+import { Loader2, Trash } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,8 +12,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {useToast} from "@/components/ui/use-toast";
-import {useDeleteDeal} from "@/server-cache/useDeleteDeal";
+import { useToast } from "@/components/ui/use-toast";
+import { useDeleteDeal } from "@/server-cache/useDeleteDeal";
 
 export function DeleteDealDialog(props: {
   dealId: string;
@@ -32,20 +32,20 @@ export function DeleteDealDialog(props: {
 
   function handleDeleteDeal() {
     deleteDealMutation.mutate(
-        {dealId, organizationId},
-        {
-          onSuccess: () => {
-            setIsOpen(false);
-            onDeleteSuccess?.();
-          },
-          onError: () => {
-            toast({
-              variant: "destructive",
-              title: "Uh oh! Something went wrong.",
-              description: "There was a problem with your request.",
-            });
-          },
-        }
+      { dealId, organizationId },
+      {
+        onSuccess: () => {
+          setIsOpen(false);
+          onDeleteSuccess?.();
+        },
+        onError: () => {
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem with your request.",
+          });
+        },
+      }
     );
   }
 

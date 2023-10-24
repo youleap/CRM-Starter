@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="wip" />
+    <list default="true" id="fa24b0a3-e3e3-4df3-aece-ad88415f7a59" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +18,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="init demo app" />
+        <option name="rewordedMessage" value="wip&#10;&#10;&#10;orgId&#10;&#10;&#10;orgId&#10;&#10;&#10;init demo app" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="3264befca26027ccdf6b7a3f3c6ea198e49f953d" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -30,24 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;crm-example&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nirtamir/dev/youleap/CRM-Starter/src/server&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "crm-example",
+    "last_opened_file_path": "/Users/nirtamir/dev/youleap/CRM-Starter/src/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/nirtamir/dev/youleap/CRM-Starter/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -391,7 +401,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698000358664</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="format">
+      <option name="closed" value="true" />
+      <created>1698131153587</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1698131153587</updated>
+    </task>
+    <task id="LOCAL-00039" summary="format">
+      <option name="closed" value="true" />
+      <created>1698131181475</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1698131181475</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,9 +439,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="modal" />
     <MESSAGE value="eslint" />
-    <MESSAGE value="format" />
     <MESSAGE value="style fix" />
-    <MESSAGE value="wip" />
     <MESSAGE value="styles and remove modal link try" />
     <MESSAGE value="clerk users" />
     <MESSAGE value="move" />
@@ -427,8 +451,9 @@
     <MESSAGE value="works" />
     <MESSAGE value="init demo app" />
     <MESSAGE value="orgId" />
-    <option name="LAST_COMMIT_MESSAGE" value="orgId" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="format" />
+    <option name="LAST_COMMIT_MESSAGE" value="format" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
