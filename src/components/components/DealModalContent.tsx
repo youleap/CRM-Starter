@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { pathFor } from "@nirtamir2/next-static-paths";
 import { Trash } from "lucide-react";
@@ -20,6 +21,7 @@ interface Props {
 export function DealModalContent(props: Props) {
   const { dealId, organizationId } = props;
   const createDealCommentMutation = useCreateDealComment();
+  const newCommentInputId = useId();
   const router = useRouter();
   const { userId, orgId } = useAuth();
 
@@ -54,7 +56,7 @@ export function DealModalContent(props: Props) {
               className="mt-4 flex flex-col-reverse space-y-2 border-t border-zinc-200 pt-4 dark:border-zinc-700"
               onSubmit={(event) => {
                 event.preventDefault();
-                const formField = event.currentTarget["new-comment"] as
+                const formField = event.currentTarget.comment as
                   | HTMLInputElement
                   | undefined;
                 if (formField == null) {
@@ -82,10 +84,10 @@ export function DealModalContent(props: Props) {
                 required
                 name="comment"
                 className="rounded-lg border p-2"
-                id="new-comment"
+                id={newCommentInputId}
                 placeholder="Type your message..."
               />
-              <Label className="mb-2" htmlFor="new-comment">
+              <Label className="mb-2" htmlFor={newCommentInputId}>
                 New Comment
               </Label>
             </form>
