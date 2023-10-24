@@ -1,5 +1,20 @@
 export const queryKeys = {
-  deals: ["deals"],
-  deal: (dealId: string) => [queryKeys.deals, dealId],
-  dealComments: (dealId: string) => [queryKeys.deals, dealId, "comments"],
+  deals: ({ organizationId }: { organizationId: string }) => [
+    { organizationId },
+    "deals",
+  ],
+  deal: ({
+    dealId,
+    organizationId,
+  }: {
+    dealId: string;
+    organizationId: string;
+  }) => [queryKeys.deals({ organizationId }), dealId],
+  dealComments: ({
+    dealId,
+    organizationId,
+  }: {
+    dealId: string;
+    organizationId: string;
+  }) => [queryKeys.deals({ organizationId }), dealId, "comments"],
 } as const;

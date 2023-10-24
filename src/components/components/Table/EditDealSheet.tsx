@@ -1,7 +1,9 @@
 import * as React from "react";
 import { ReactNode, useState } from "react";
 import { Edit2, Loader2 } from "lucide-react";
+import { getDealKeys } from "@/components/components/Table/CreateDealSheet";
 import { DealData } from "@/components/components/Table/DealData";
+import { isDisabledKey } from "@/components/components/Table/EditDealForm";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,11 +30,12 @@ export function EditDealSheet(props: {
 
   const updateRowMutation = useUpdateDeal();
 
-  function handleUpdateRow(updatedRow: Record<string, unknown>) {
+  function handleUpdateRow(updatedRow: DealData) {
     updateRowMutation.mutate(
       {
         id: row.id,
         data: updatedRow,
+        organizationId: row.organizationId,
       },
       {
         onSuccess: () => {
@@ -57,7 +60,7 @@ export function EditDealSheet(props: {
           onSubmit={(event) => {
             event.preventDefault();
             const updatedRow = Object.fromEntries(
-              Object.keys(row).map((key) => {
+              getDealKeys().map((key) => {
                 const formField = event.currentTarget[key] as
                   | HTMLInputElement
                   | undefined;
@@ -66,7 +69,7 @@ export function EditDealSheet(props: {
                 }
                 return [key, formField.value];
               })
-            );
+            ) as unknown as DealData;
 
             // TODO: better to patch only the data that changed
             handleUpdateRow(updatedRow);
@@ -88,7 +91,7 @@ export function EditDealSheet(props: {
                   <Input
                     id={key}
                     name={key}
-                    disabled={key === "id" || key === "userId"}
+                    disabled={isDisabledKey(key)}
                     defaultValue={String(value)}
                     className="col-span-3"
                   />

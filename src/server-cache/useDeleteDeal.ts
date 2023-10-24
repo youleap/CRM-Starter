@@ -7,13 +7,23 @@ import { queryKeys } from "@/server-cache/queryKeys";
 export function useDeleteDeal() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async (rowId: string) => {
+    mutationFn: async ({
+      dealId,
+      organizationId,
+    }: {
+      dealId: string;
+      organizationId: string;
+    }) => {
       return (await fetchWorkflowService(config.deleteDealUrl, {
-        body: { id: rowId },
+        body: { id: dealId, organizationId },
       })) as DealData;
     },
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.deals });
+    onSuccess: async (_, variables) => {
+      const { organizationId } = variables;
+
+      await queryClient.invalidateQueries({
+        queryKey: queryKeys.deals({ organizationId }),
+      });
     },
   });
 }

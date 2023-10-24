@@ -19,30 +19,34 @@ export function DeleteDealDialog(props: {
   dealId: string;
   asChild?: boolean;
   trigger: ReactNode;
+  organizationId: string;
   onDeleteSuccess?: () => void;
 }) {
   const { toast } = useToast();
 
-  const { trigger, asChild, dealId, onDeleteSuccess } = props;
+  const { trigger, asChild, dealId, organizationId, onDeleteSuccess } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
   const deleteDealMutation = useDeleteDeal();
 
   function handleDeleteDeal() {
-    deleteDealMutation.mutate(dealId, {
-      onSuccess: () => {
-        setIsOpen(false);
-        onDeleteSuccess?.();
-      },
-      onError: () => {
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-        });
-      },
-    });
+    deleteDealMutation.mutate(
+      { dealId, organizationId },
+      {
+        onSuccess: () => {
+          setIsOpen(false);
+          onDeleteSuccess?.();
+        },
+        onError: () => {
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem with your request.",
+          });
+        },
+      }
+    );
   }
 
   return (

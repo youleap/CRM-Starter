@@ -12,14 +12,19 @@ export function useUpdateDeal() {
       data,
     }: {
       id: string;
-      data: Record<string, unknown>;
+      data: DealData;
+      organizationId: string;
     }) => {
       return (await fetchWorkflowService(config.updateDealUrl, {
-        body: { id, ...data },
+        body: { ...data, id },
       })) as DealData;
     },
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.deals });
+    onSuccess: async (_, variables) => {
+      const { organizationId } = variables;
+
+      await queryClient.invalidateQueries({
+        queryKey: queryKeys.deals({ organizationId }),
+      });
     },
   });
 }

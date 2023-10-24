@@ -124,6 +124,7 @@ export function DealTable(props: {
             <DeleteDealDialog
               asChild
               dealId={row.original.id}
+              organizationId={row.original.organizationId}
               trigger={
                 <DropdownMenuItem
                   className="flex cursor-pointer items-center text-destructive focus:text-destructive"
@@ -260,9 +261,6 @@ export function DealTable(props: {
     ));
   }
 
-  // eslint-disable-next-line prefer-destructuring
-  const firstRow: DealData | null = data[0];
-
   return (
     <div className="w-full">
       <div className="flex items-center gap-4 py-4">
@@ -274,11 +272,7 @@ export function DealTable(props: {
             setGlobalFilter(event.target.value);
           }}
         />
-        <CreateDealSheet
-          asChild
-          deal={firstRow}
-          trigger={<Button>Create Row</Button>}
-        />
+        <CreateDealSheet asChild trigger={<Button>Create Row</Button>} />
         <TableColumnSelection table={table} />
       </div>
       <div className="rounded-md border">

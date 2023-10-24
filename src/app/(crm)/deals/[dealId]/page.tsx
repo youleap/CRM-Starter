@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+"use client";
+
+import { useAuth } from "@clerk/nextjs";
 import { DealModalContent } from "@/components/components/DealModalContent";
 
 interface Props {
-  modal?: ReactNode;
   params: {
     dealId: string;
   };
@@ -11,6 +12,11 @@ interface Props {
 export default function DealPage(props: Props) {
   const { params } = props;
   const { dealId } = params;
+  const { orgId } = useAuth();
 
-  return <DealModalContent dealId={dealId} />;
+  if (orgId == null) {
+    return null;
+  }
+
+  return <DealModalContent dealId={dealId} organizationId={orgId} />;
 }
