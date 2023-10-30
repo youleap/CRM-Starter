@@ -62,7 +62,6 @@ export function DealModalContent(props: Props) {
                 if (formField == null) {
                   throw new Error("text not found for new comment");
                 }
-                event.currentTarget.reset();
                 const text = formField.value;
                 createDealCommentMutation.mutate({
                   organizationId: orgId,
@@ -71,6 +70,8 @@ export function DealModalContent(props: Props) {
                   text,
                   timestamp: new Date().toLocaleString(),
                 });
+
+                event.currentTarget.reset();
               }}
             >
               <Button
